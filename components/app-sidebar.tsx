@@ -2,6 +2,7 @@
 
 import { Coffee, MapPin, ReceiptText, Settings } from 'lucide-react'
 import Link from "next/link"
+import { TonConnectButton } from "@tonconnect/ui-react"
 
 import {
   Sidebar,
@@ -59,7 +60,12 @@ export function AppSidebar() {
         </SidebarGroup>
         <SidebarSeparator />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter className="p-4">
+        <div className="group-data-[collapsible=icon]:hidden">
+          <div className="mb-2 text-xs font-medium text-muted-foreground">TON Wallet</div>
+          <TonConnectButton />
+        </div>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

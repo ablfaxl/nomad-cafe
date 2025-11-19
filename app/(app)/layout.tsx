@@ -50,9 +50,7 @@ function Header({ onOpenCart }: { onOpenCart: () => void }) {
                 aria-label="Search menu"
               />
             </div>
-            <div className="hidden md:block">
-              <TonConnectButton />
-            </div>
+            <TonConnectButton />
             <Button variant="outline" size="sm" onClick={onOpenCart} aria-label="Open cart">
               <ShoppingCart className="mr-2 h-4 w-4" />
               Cart
