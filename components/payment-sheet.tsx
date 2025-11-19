@@ -56,8 +56,9 @@ export function PaymentSheet({
       const data: CreateOrderResponse = await res.json()
       setResult(data)
       toast({ title: "Order created", description: `Order #${data.order.id}` })
-    } catch (err: any) {
-      toast({ title: "Error", description: err.message, variant: "destructive" })
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "An error occurred"
+      toast({ title: "Error", description: errorMessage, variant: "destructive" })
     } finally {
       setLoading(false)
     }
@@ -110,11 +111,12 @@ export function PaymentSheet({
         onOpenChange(false)
       }, 2000)
       
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("[v0] Payment error:", err)
+      const errorMessage = err instanceof Error ? err.message : "Transaction was rejected or failed"
       toast({ 
         title: "Payment failed", 
-        description: err.message || "Transaction was rejected or failed",
+        description: errorMessage,
         variant: "destructive" 
       })
     } finally {
@@ -155,8 +157,8 @@ export function PaymentSheet({
 
           <ol className="list-decimal pl-5 text-sm text-muted-foreground">
             <li>Connect your TON wallet (Tonkeeper, Tonhub, etc.)</li>
-            <li>Click "Create payment" to generate an order.</li>
-            <li>Click "Send payment" to sign and send the transaction.</li>
+            <li>Click &quot;Create payment&quot; to generate an order.</li>
+            <li>Click &quot;Send payment&quot; to sign and send the transaction.</li>
             <li>We verify on-chain and update your order status.</li>
           </ol>
 

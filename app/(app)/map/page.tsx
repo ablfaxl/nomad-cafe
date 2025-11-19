@@ -45,8 +45,9 @@ export default function MapPage() {
       const res = await fetch(`/api/cafes/nearest?lat=${lat}&lng=${lng}&limit=5`)
       const data: Cafe[] = await res.json()
       setCafes(data)
-    } catch (e: any) {
-      setError(e.message || "Failed to get location. Please enable location services.")
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : "Failed to get location. Please enable location services."
+      setError(errorMessage)
     } finally {
       setLoading(false)
     }
@@ -110,7 +111,7 @@ export default function MapPage() {
 
       {!coords && !error && (
         <p className="text-pretty text-sm leading-relaxed text-muted-foreground">
-          Click "Use my location" to calculate your distance to Nomad-Cafe and find directions.
+          Click &quot;Use my location&quot; to calculate your distance to Nomad-Cafe and find directions.
         </p>
       )}
       {error && (
