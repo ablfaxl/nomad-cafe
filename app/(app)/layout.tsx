@@ -12,7 +12,6 @@ import { CartProvider, useCart } from "@/components/cart-context"
 import { cn } from "@/lib/utils"
 import { TonConnectUIProvider, TonConnectButton } from "@tonconnect/ui-react"
 import { LoadingScreen } from "@/components/loading-screen"
-import { useSearchParams } from "next/navigation"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = React.useState(false)
@@ -39,7 +38,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 function Header({ onOpenCart }: { onOpenCart: () => void }) {
   const { totalQty } = useCart()
-  const searchParams = useSearchParams()
   const [showSearch, setShowSearch] = React.useState(false)
 
   return (
