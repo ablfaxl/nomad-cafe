@@ -4,9 +4,12 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
+  basePath: isGithubPages ? '/nomad-cafe' : '',
+  assetPrefix: isGithubPages ? '/nomad-cafe' : '',
   typescript: {
     ignoreBuildErrors: true,
   },
