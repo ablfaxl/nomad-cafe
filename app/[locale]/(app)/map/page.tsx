@@ -17,7 +17,11 @@ type Cafe = {
 
 const NOMAD_CAFE_LAT = Number.parseFloat(process.env.NEXT_PUBLIC_CAFE_LAT || "35.7173075")
 const NOMAD_CAFE_LNG = Number.parseFloat(process.env.NEXT_PUBLIC_CAFE_LNG || "51.4185506")
-
+// This function tells Next.js to pre-render the page for each of these locales during the build.
+export async function generateStaticParams() {
+  // This array of locales MUST match the one in your i18n.ts configuration.
+  return [{ locale: 'en' }, { locale: 'fa' }];
+}
 export default function MapPage() {
   const [coords, setCoords] = React.useState<{ lat: number; lng: number } | null>(null)
   const [cafes, setCafes] = React.useState<Cafe[]>([])
