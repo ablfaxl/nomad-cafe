@@ -9,13 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/nomad-logo.jpg",
+      "src": "/nomad_logo4.png",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "/nomad-logo.jpg",
+      "src": "/nomad_logo4.png",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"

@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "Nomad-Cafe",
   },
   icons: {
-    icon: "/nomad-logo.jpg",
-    apple: "/nomad-logo.jpg",
+    icon: "/nomad_logo4.png",
+    apple: "/nomad_logo4.png",
   },
 }
 

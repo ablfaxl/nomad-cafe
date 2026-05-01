@@ -22,7 +22,7 @@ export function LoadingScreen() {
             style={{ width: 120, height: 120 }}
           />
           <div className="flex h-[120px] w-[120px] items-center justify-center overflow-hidden rounded-full bg-white shadow-lg">
-            <Image src="/nomad-logo.jpg" alt="Nomad-Cafe Logo" width={100} height={100} className="object-contain" />
+            <Image src="/nomad_logo4.png" alt="Nomad-Cafe Logo" width={100} height={100} className="object-contain" />
           </div>
         </div>
         <h1 className="brand-gradient bg-clip-text text-3xl font-bold text-transparent">Nomad-Cafe</h1>
